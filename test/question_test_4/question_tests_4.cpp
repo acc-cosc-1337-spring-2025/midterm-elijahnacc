@@ -10,3 +10,10 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE("Verify get_farenheit")
+{
+	CHECK(get_farenheit(37) == 98.6);
+	CHECK(get_farenheit(25) == 77);
+	CHECK(get_farenheit(0) == 32);
+}
