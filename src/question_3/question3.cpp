@@ -8,7 +8,8 @@ bool test_config()
 
 int binary_to_decimal(std::string binary)
 {
-    int decimal, exponent = 0;
+    int decimal = 0;
+    int exponent = 0;
     int length = binary.size();
 
     for (int digit = 1; digit <= length; ++digit)

@@ -2,28 +2,22 @@
 #include <iostream>
 #include <string>
 
-using std::cin; using std::cout; using std::string;
-
+using std::cin; using std::cout;
 
 int main()
 {
-    //Using loops prompt the user for a binary string value 
-    //Validate the string for length 8, the string must contain only 1 and 0s (use the string contains function to make this easier).  
-    //The program will run until the user opts out (types a character to exit the program).
     
-    string user_binary;
-    int decimal{};
+    std::string user_binary;
     char cont{};
     bool valid_input{};
+    int decimal{0};
 
     do
     {
         do 
         {
-            cout << decimal;
             cout << "\nPlease enter an 8-digit binary value: ";
             cin >> user_binary;
-            cout << user_binary << "\n";
             valid_input = true;
 
             if (user_binary.size() != 8)
@@ -41,9 +35,8 @@ int main()
             }
         } while (valid_input == false);
 
-        cout << "\nDecimal before function: " << decimal << "\n";
-        decimal = binary_to_decimal(user_binary); // ~ 32760 is being added to my output. functions pass all test cases
-        cout << decimal; 
+        decimal = binary_to_decimal(user_binary);
+        cout << decimal;
         
         cont = ' ';
         while (toupper(cont) != 'Y' && toupper(cont) != 'N')
